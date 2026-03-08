@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro NES Hub</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .console-container {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            border: 5px solid #444;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        canvas {
+            background: black;
+            border: 2px solid #555;
+            image-rendering: pixelated; /* Mantiene los píxeles nítidos */
+            width: 512px;
+            height: 480px;
+        }
+        .controls {
+            margin: 20px 0;
+            background: #444;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        select {
+            padding: 8px;
+            background: #222;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            cursor: pointer;
+        }
+        .instructions {
+            margin-top: 15px;
+            font-size: 0.8em;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>NES EMULATOR CLOUD</h1>
+
+    <div class="controls">
+        <label for="game-selector">Selecciona un juego de /games:</label>
+        <select id="game-selector">
+            <option value="">Conectando con GitHub...</option>
+        </select>
+    </div>
+
+    <div class="console-container">
+        <canvas id="nes-canvas" width="256" height="240"></canvas>
+    </div>
+
+    <div class="instructions">
+        <p>Controles: Flechas (D-Pad) | Z (B) | X (A) | Enter (Start) | Shift (Select)</p>
+    </div>
+
+    <script src="https://unpkg.com/jsnes/dist/jsnes.min.js"></script>
+    <script src="emulator.js"></script>
+</body>
+</html>
